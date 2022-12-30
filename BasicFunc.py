@@ -6,7 +6,8 @@ Created on Fri Oct  5 23:38:14 2018
 """
 
 import matplotlib.pyplot as plt
-import tensorflow as tf
+#import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import numpy as np
 import time
 #isShowPic=1
@@ -209,6 +210,7 @@ def add_layer(x,input_dim = 1,output_dim = 1,astddev=0.05,bstddev=0.05,ActFuc=0,
     if seed==0:
         seed=time.time()
     tf.set_random_seed(seed)
+    #tf.random.set_seed(seed)
         
     with tf.variable_scope(name_scope, reuse=tf.AUTO_REUSE):
         ua_w = tf.get_variable(
